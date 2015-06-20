@@ -63,7 +63,7 @@ class PubnubLaravel {
 			'message' => $message
 		];
 
-		$response = $this->pubnub->publish($args);
+		$response = $this->pubnub->publish($channel,$message);
 
 		// The Pubnub library will return either false or a weird array with key [0] === 0, indicating failure.
 		// Detect these cases and throw a nice exception instead.
